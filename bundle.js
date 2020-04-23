@@ -1,16 +1,18 @@
 "use strict";
 
-//REST
-///o resto das funcionalidades tem no curso da udemy de webDev (angela yu)
-function soma(a, b) {
-  for (var _len = arguments.length, params = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-    params[_key - 2] = arguments[_key];
-  }
+//Template literals
+var nome = "Guilherme";
+var idade = 19; //console.log("Meu nome é " + nome + " e tenho " + idade + " anos.");
+//isso dai de cima eh a mesma coisa disso daki de baixo
 
-  var count = params.reduce(function (total, next) {
-    return total + next;
-  });
-  return a + b + count;
-}
+console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos.")); //sim isso eh um acento (crase `) e não aspas simples
+//object short syntax
 
-console.log(soma(1, 3, 4, 7, 8, 9));
+var usuario = {
+  nome: nome,
+  //nome: nome,
+  idade: idade,
+  //idade: idade,
+  país: "Brasil"
+};
+console.log(usuario);

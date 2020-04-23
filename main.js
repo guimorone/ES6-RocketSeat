@@ -1,9 +1,20 @@
-//REST
-///o resto das funcionalidades tem no curso da udemy de webDev (angela yu)
+//Template literals
 
-function soma(a, b, ...params) {
-    const count = params.reduce((total, next) => total + next);
-    return a + b + count;
-}
+const nome = "Guilherme";
+const idade = 19;
 
-console.log(soma(1, 3, 4, 7, 8, 9));
+//console.log("Meu nome é " + nome + " e tenho " + idade + " anos.");
+//isso dai de cima eh a mesma coisa disso daki de baixo
+
+console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+//sim isso eh um acento (crase `) e não aspas simples
+
+//object short syntax
+
+const usuario = {
+    nome, //nome: nome,
+    idade, //idade: idade,
+    país: "Brasil"
+};
+
+console.log(usuario);
