@@ -1,18 +1,16 @@
-const minhaPromise = () => new Promise((resolve, reject) => setTimeout(() => { resolve('OK') }, 2000));
+//Usando async/await com axios
+import axios from "axios";
 
-//async = assíncrona
-//async function = uma promise
-//await só pode usar dentro de uma função com async
-//async funciona com arrow functions tb
-//tipo const blablabla = async () => {};
-
-async function executaPromise() {
-    //await só executa a função depois que a de cima já foi executada
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
+class Api {
+    static async getUserInfo(username) {
+        try{
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        } catch(err) {
+            console.warn("Erro na API.");
+        }
+    }
 }
 
-//esse await minhaPromise() faz o papel do minhaPromise().then(response => console.log(response))
-
-executaPromise();
+Api.getUserInfo("adasdasdsadas"); //vai dar erro, mas eh só pra teste
+Api.getUserInfo("guimorone");
