@@ -1,11 +1,9 @@
-//valores padrão
-//serve para arrow functions também
-//VALORES PADRÃO SEMPRE TEM QUE VIM DEPOIS DOS VALORES QUE SÃO OBRIGATÓRIOS
-//por exemplo: function soma(a = 3, b = 6), function soma(a, b = 6)
-//já function soma(a = 3, b) tá errado
+//REST
+///o resto das funcionalidades tem no curso da udemy de webDev (angela yu)
 
-function soma(a = 3, b = 6) {
-    return a + b;
+function soma(a, b, ...params) {
+    const count = params.reduce((total, next) => total + next);
+    return a + b + count;
 }
 
-console.log(soma(2));
+console.log(soma(1, 3, 4, 7, 8, 9));

@@ -1,14 +1,16 @@
 "use strict";
 
-//valores padrão
-//serve para arrow functions também
-//VALORES PADRÃO SEMPRE TEM QUE VIM DEPOIS DOS VALORES QUE SÃO OBRIGATÓRIOS
-//por exemplo: function soma(a = 3, b = 6), function soma(a, b = 6)
-//já function soma(a = 3, b) tá errado
-function soma() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a + b;
+//REST
+///o resto das funcionalidades tem no curso da udemy de webDev (angela yu)
+function soma(a, b) {
+  for (var _len = arguments.length, params = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+    params[_key - 2] = arguments[_key];
+  }
+
+  var count = params.reduce(function (total, next) {
+    return total + next;
+  });
+  return a + b + count;
 }
 
-console.log(soma(2));
+console.log(soma(1, 3, 4, 7, 8, 9));
