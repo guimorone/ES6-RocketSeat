@@ -1,0 +1,16 @@
+{
+  "name": "ES6-RocketSeat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/guimorone/ES6-RocketSeat.git",
+  "author": "Guilherme Morone Araujo <guimorone@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5"
+  },
+  "scripts": {
+    "dev": "babel ./main.js -o bundle.js -w"
+  }
+}
